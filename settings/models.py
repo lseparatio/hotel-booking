@@ -1,5 +1,6 @@
 from django.db import models
 from parler.models import TranslatableModel, TranslatedFields
+from django.core.validators import FileExtensionValidator
 
 class IndexPage(TranslatableModel):
     class Meta:
@@ -13,6 +14,21 @@ class IndexPage(TranslatableModel):
         title_2 = models.TextField(null=True, blank=True),
         small_2 = models.TextField(null=True, blank=True),
         book_now = models.TextField(null=True, blank=True),
+        first_Of_4_title = models.TextField(null=True, blank=True),
+        first_Of_4_subtitle = models.TextField(null=True, blank=True),
+        second_Of_4_title = models.TextField(null=True, blank=True),
+        second_Of_4_subtitle = models.TextField(null=True, blank=True),
+        third_Of_4_title = models.TextField(null=True, blank=True),
+        third_Of_4_subtitle = models.TextField(null=True, blank=True),
+        fourth_Of_4_title = models.TextField(null=True, blank=True),
+        fourth_Of_4_subtitle = models.TextField(null=True, blank=True),
+        video = models.FileField(upload_to='videos_uploaded',null=True,
+validators=[FileExtensionValidator(allowed_extensions=['MOV','avi','mp4','webm','mkv'])]),
+        presentation_title = models.TextField(null=True, blank=True),
+        presemtation_description = models.TextField(null=True, blank=True),
+        tick_1 = models.TextField(null=True, blank=True),
+        tick_2 = models.TextField(null=True, blank=True),
+        tick_3 = models.TextField(null=True, blank=True),
     )
 
     def __unicode__(self):
