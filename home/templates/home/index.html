@@ -66,32 +66,32 @@ url({% static 'home/img/cata-hero.jpg' %})">
                 <span>
                     <img src="{% static 'home/img/clock.svg' %}" alt="clock icon" class="enjoy__clock-icon">
                 </span>
-                <h3>24 hours Room Service</h3>
-                <p>You have access to 24-hours a day room service at our hotel.</p>
+                <h3>{{ index.first_Of_4_title|linebreaksbr }}</h3>
+                <p>{{ index.first_Of_4_subtitle|linebreaksbr }}</p>
             </div>
             <div class="lower">
                 <span>
                     <img src="{% static 'home/img/database.svg' %}" alt="fitness icon" class="enjoy__fitness-icon">
                 </span>
-                <h3>Fitness and Spa</h3>
-                <p>Access to fitness and Spa is part of our hotel package when you make a booking.</p>
+                <h3>{{ index.third_Of_4_title|linebreaksbr }}</h3>
+                <p>{{ index.third_Of_4_subtitle|linebreaksbr }}</p>
             </div>
 
         </div>
         <div class="sec-col">
             <div class="upper">
                 <span>
-                    <img src="{% static  'home/img/coffee.svg' %}" alt="coffee icon" class="enjoy__coffee-icon">
+                    <img src="{% static 'home/img/coffee.svg' %}" alt="coffee icon" class="enjoy__coffee-icon">
                 </span>
-                <h3>Restaurant and Bars</h3>
-                <p>You have access to the world state of art restaurants and bars at our hotel</p>
+                <h3>{{ index.second_Of_4_title|linebreaksbr }}</h3>
+                <p>{{ index.second_Of_4_subtitle|linebreaksbr }}</p>
             </div>
             <div class="lower">
                 <span>
-                    <img src="{% static  'home/img/wifi.svg' %}" alt="wifi icon" class="enjoy__wifi-icon">
+                    <img src="{% static 'home/img/wifi.svg' %}" alt="wifi icon" class="enjoy__wifi-icon">
                 </span>
-                <h3>Free Wi-Fi Access</h3>
-                <p>You have access to 24-hours free Wi-Fi services irrespective of any room.</p>
+                <h3>{{ index.fourth_Of_4_title|linebreaksbr }}</h3>
+                <p>{{ index.fourth_Of_4_subtitle|linebreaksbr }}</p>
             </div>
         </div>
         <div class="third-col cont">
