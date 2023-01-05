@@ -1,6 +1,7 @@
 import os
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import dj_database_url
 
 
 if os.path.exists('env.py'):
@@ -106,28 +107,31 @@ WSGI_APPLICATION = 'hotel_booking.wsgi.application'
 
 
 # Database
-if os.environ.get('DEVELOPMENT') == 'True':
+#if os.environ.get('DEVELOPMENT') == 'True':
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
-    }
+#    DATABASES = {
+#        'default': {
+#            'ENGINE': 'django.db.backends.sqlite3',
+#            'NAME': BASE_DIR / 'db.sqlite3',
+#        }
+#    }
 
-else:
+#else:
 
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': os.environ.get('DB_NAME'),
-            'USER': os.environ.get('DB_USER'),
-            'PASSWORD': os.environ.get('DB_PASSWORD'),
-            'HOST': os.environ.get('DB_HOST'),
-            'PORT': os.environ.get('DB_PORT'),
-        }
-    }
+#    DATABASES = {
+#       'default': {
+#           'ENGINE': 'django.db.backends.mysql',
+#            'NAME': os.environ.get('DB_NAME'),
+ #           'USER': os.environ.get('DB_USER'),
+ #           'PASSWORD': os.environ.get('DB_PASSWORD'),
+ #           'HOST': os.environ.get('DB_HOST'),
+ #           'PORT': os.environ.get('DB_PORT'),
+ #       }
+ #   }
 
+DATABASES = {
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
