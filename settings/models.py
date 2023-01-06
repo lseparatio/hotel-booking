@@ -1,6 +1,7 @@
 from django.db import models
 from parler.models import TranslatableModel, TranslatedFields
 from django.core.validators import FileExtensionValidator
+from colorfield.fields import ColorField
 
 class IndexPage(TranslatableModel):
     class Meta:
@@ -48,11 +49,13 @@ class TopNav(TranslatableModel):
     translations = TranslatedFields (
         use_settings = models.BooleanField(default=False),
         site_logo = models.ImageField(null=True, blank=True),
+        nav_color = ColorField(format="hexa"),
         home = models.TextField(null=True, blank=True),
         rooms_and_suites = models.TextField(null=True, blank=True),
         facilities = models.TextField(null=True, blank=True),
         contact_us = models.TextField(null=True, blank=True),
         book_now = models.TextField(null=True, blank=True),
+
     )
 
     def __unicode__(self):

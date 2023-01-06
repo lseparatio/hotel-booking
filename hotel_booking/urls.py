@@ -11,6 +11,7 @@ urlpatterns = i18n_patterns(
     path('i18n/', include('django.conf.urls.i18n')),
     path(_('admin/'), admin.site.urls),
     path('accounts/', include('allauth.urls')),
+    path('profile/' , include('profiles.urls')),
     path('favicon.ico', RedirectView.as_view(
     url = staticfiles_storage.url('img/favicon.ico'))),
     path('', include('home.urls')),

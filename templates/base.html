@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n parler_tags %}
+{% load i18n %}
 <!doctype html>
 
 <head>
@@ -16,7 +18,6 @@
         Mega Image, spălătorie auto, vulcanizare, centru, etc.
         Studio apartmentele oferite sunt dotate și echipate cu toate dotările unui hotel de lux." />
     <meta property="og:image" content="" />
-
 
     {% endblock %}
 
@@ -46,8 +47,8 @@
 
     <title>Dream Studio Flats</title>
 </head>
-
-<body class="scroll-bar">
+{% for nav in topnav %}
+<body class="scroll-bar" style="background-color: aqua;">
     <div id="loader">
         <svg version="1.1" id="L9" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
             y="0px" viewBox="0 0 100 100" enable-background="new 0 0 0 0" xml:space="preserve">
@@ -58,8 +59,7 @@
             </path>
         </svg>
     </div>
-    <header>
-        {% for nav in topnav %}
+    <header style="background-color: {{ nav.nav_color }};">
         <div class="header-container">
             <nav class="header-nav-bar">
                 <div class="header-nav-logo">

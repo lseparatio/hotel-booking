@@ -22,11 +22,10 @@
     {% get_translated_url lang_code as tr_url %}
     {% if tr_url %}<link rel="alternate" hreflang="{{ lang_code }}" href="{{ tr_url }}" />{% endif %}
 {% endfor %}
-
+{% for index in index %}
 <div class="jumbotron-container" style="background-image: linear-gradient(rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0)),
-url({% static 'home/img/cata-hero.jpg' %})">
+url({{ index.site_hero.url }})">
     <div class="jumbotron-left">
-        {% for index in index %}
         <h2 class="jumbotron-header">{{ index.text_title_hero|linebreaksbr }}</h2>
         
         <p>{{ index.text_small_hero|linebreaksbr }}</p>

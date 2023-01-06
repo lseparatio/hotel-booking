@@ -48,7 +48,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'django_countries',
     'home',
+    'profiles',
+    'colorfield', 
     'reviews',
     'settings',
 ]
@@ -107,7 +110,7 @@ WSGI_APPLICATION = 'hotel_booking.wsgi.application'
 
 
 # Database
-#if os.environ.get('DEVELOPMENT') == 'True':
+# if os.environ.get('DEVELOPMENT') == 'True':
 
 #    DATABASES = {
 #        'default': {
@@ -116,18 +119,18 @@ WSGI_APPLICATION = 'hotel_booking.wsgi.application'
 #        }
 #    }
 
-#else:
+# else:
 
 #    DATABASES = {
 #       'default': {
 #           'ENGINE': 'django.db.backends.mysql',
 #            'NAME': os.environ.get('DB_NAME'),
- #           'USER': os.environ.get('DB_USER'),
- #           'PASSWORD': os.environ.get('DB_PASSWORD'),
- #           'HOST': os.environ.get('DB_HOST'),
- #           'PORT': os.environ.get('DB_PORT'),
- #       }
- #   }
+#           'USER': os.environ.get('DB_USER'),
+#           'PASSWORD': os.environ.get('DB_PASSWORD'),
+#           'HOST': os.environ.get('DB_HOST'),
+#           'PORT': os.environ.get('DB_PORT'),
+#       }
+#   }
 
 DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -187,7 +190,7 @@ LANGUAGES = [
 ]
 
 PARLER_ENABLE_CACHING = False
-prefix_default_language=False
+prefix_default_language = False
 
 # LOCALE_PATHS = [
 #    BASE_DIR / 'locale/',
